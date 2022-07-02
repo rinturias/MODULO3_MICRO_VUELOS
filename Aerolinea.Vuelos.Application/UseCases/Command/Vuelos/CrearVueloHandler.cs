@@ -59,10 +59,11 @@ namespace Aerolinea.Vuelos.Application.UseCases.Command.Vuelos
             }
            catch    (Exception ex)
             {
-          Console.WriteLine(ex.ToString());
-           
+            Console.WriteLine(ex.ToString());
+           return new ResulService { success = false, error= ex.Message, codError = "COD501", messaje = "ERROR crear al crear vuelo" };
+
             }
-            return new ResulService { success=false,codError="COD501", messaje = "ERROR crear al crear vuelo" };
+        
 
         }
 
